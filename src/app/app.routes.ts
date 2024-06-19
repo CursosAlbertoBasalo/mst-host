@@ -9,7 +9,11 @@ export const routes: Routes = [
   },
   {
     path: 'remote-one',
-    loadComponent: () =>
-      loadRemoteModule('mfe1', './Component').then((m) => m.AppComponent),
+    loadComponent: () => loadRemoteModule('mfe1', './Widget'),
+  },
+  {
+    path: 'remote2',
+    loadChildren: () =>
+      loadRemoteModule('mfe2', './ROUTES_REMOTE_TWO').then((m) => m.routes),
   },
 ];
